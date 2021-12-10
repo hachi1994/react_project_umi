@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './index.css';
+import styles from './index.css'
 import { Button, message,Upload } from 'antd'
 const props = {
   name: 'file',

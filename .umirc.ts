@@ -7,7 +7,8 @@ const config: IConfig = {
       path: '/',
       component: '../layouts/index',
       routes: [
-        { path: '/', component: '../pages/index' }
+        { path: '/', component: '../pages/index' },
+        { path: '/uploadImg', component: '../pages/uploadImg/index' }
       ]
     }
   ],
