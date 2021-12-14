@@ -4,8 +4,8 @@ import { connect } from 'dva'
 import styles from './index.less'
 import axios from 'axios'
 function App(props: any) {
-    console.log(props.model)
     let [count, setCount] = useState(1)
+    let [msg,setMsg] = useState('ahaa')
     const uploadProps = {
         name: 'file',
         action: '/api/uploadImg',
@@ -42,6 +42,13 @@ function App(props: any) {
         })
     }
     const { qq = 'wade' } = props.model
+     
+    function changeMsg(e: any){
+        setMsg(msg = e.target.value)
+    }
+    function clear():void {
+        setMsg('')
+    }
     return (
         <div className={styles.normal}>
             {qq}
@@ -49,6 +56,20 @@ function App(props: any) {
             <Upload {...uploadProps}>
                 <Button type='primary'>Click to Upload</Button>
             </Upload>
+
+            <div>
+                <Child msg={msg} clear={clear} changeMsg={changeMsg}/>
+            </div>
+        </div>
+    )
+}
+
+function Child(props:any){
+    const {msg,changeMsg,clear} = props
+    return (
+        <div>
+            <input type="text" value={msg} onChange={changeMsg} />
+            <span onClick={clear}>clear</span>
         </div>
     )
 }
