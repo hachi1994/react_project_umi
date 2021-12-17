@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Button, message, Upload } from 'antd'
 import { connect } from 'dva'
 import styles from './index.less'
@@ -6,6 +6,9 @@ import axios from 'axios'
 function App(props: any) {
     let [count, setCount] = useState(1)
     let [msg,setMsg] = useState('ahaa')
+    useEffect(()=>{
+        import('./math').then(e=>{e.add()})
+    })
     const uploadProps = {
         name: 'file',
         action: '/api/uploadImg',
@@ -58,7 +61,8 @@ function App(props: any) {
             </Upload>
 
             <div>
-                <Child msg={msg} clear={clear} changeMsg={changeMsg}/>
+                <Child title={<h1>title</h1>} msg={msg} clear={clear} changeMsg={changeMsg}>
+                </Child>
             </div>
         </div>
     )
@@ -70,6 +74,7 @@ function Child(props:any){
         <div>
             <input type="text" value={msg} onChange={changeMsg} />
             <span onClick={clear}>clear</span>
+            {props.title}
         </div>
     )
 }
