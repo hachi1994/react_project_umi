@@ -6,8 +6,8 @@ import axios from 'axios'
 function App(props: any) {
     let [count, setCount] = useState(1)
     let [msg,setMsg] = useState('ahaa')
+    console.log(props,141)
     useEffect(()=>{
-        import('./math').then(e=>{e.add()})
     })
     const uploadProps = {
         name: 'file',
@@ -85,4 +85,4 @@ function Child(props:any){
 //     return {...uploadImg}
 // })(App)
 
-export default connect((uploadImg) => { return { ...uploadImg } })(App)
+export default connect((uploadImg,global) => { return { ...uploadImg,...global } })(App)

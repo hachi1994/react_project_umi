@@ -9,7 +9,8 @@ const config: IConfig = {
       component: '../layouts/index',
       routes: [
         { path: '/', component: '../pages/index' },
-        { path: '/uploadImg', component: '../pages/uploadImg/index' }
+        { path: '/uploadImg', component: '../pages/uploadImg/index' },
+        { path: '/testAsyncComp', component: '../pages/testAsyncComp/index' }
       ]
     }
   ],

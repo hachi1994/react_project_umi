@@ -7,10 +7,5 @@ export const dva = {
       },
       plugins: [
         //require('dva')(),
-      ],
-      initialState: {
-        global: {
-          text: 'hi umi + dva',
-        },
-      },
+      ]
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.css';
-
+import { connect } from 'dva'
 const BasicLayout: React.FC = props => {
   return (
     <div className={styles.normal}>
@@ -10,4 +10,4 @@ const BasicLayout: React.FC = props => {
   );
 };
 
-export default BasicLayout;
+export default connect((global) => { return { ...global } })(BasicLayout);
