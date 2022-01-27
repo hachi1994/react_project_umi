@@ -3,7 +3,8 @@ export default {
   //namespace: 'uploadImg',
   state: {
     name: 1,
-    age: 20
+    age: 20,
+    ahaha:'441'
   },
   effects: {
     *getName(payload, { call, put }) {

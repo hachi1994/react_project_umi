@@ -2,7 +2,8 @@ export default {
     //namespace: 'uploadImg',
     state: {
         name:1,
-        age:20
+        age:40,
+        ahaha:'441'
     },
 
     reducers: {
