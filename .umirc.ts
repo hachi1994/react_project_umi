@@ -10,7 +10,8 @@ const config: IConfig = {
       routes: [
         { path: '/', component: '../pages/index' },
         { path: '/uploadImg', component: '../pages/uploadImg/index' },
-        { path: '/testAsyncComp', component: '../pages/testAsyncComp/index' }
+        { path: '/testAsyncComp', component: '../pages/testAsyncComp/index' },
+        { path: '/reactDemo', component: '../pages/reactDemo/index' },
       ]
     }
   ],

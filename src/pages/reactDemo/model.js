@@ -1,11 +1,8 @@
 import axios from "axios";
 export default {
-  namespace: 'uploadImg',
+  namespace: 'reactDemo',
   state: {
-    name: 1,
-    age: 20,
-    ahaha:'441',
-    qq:'james'
+    title:'reactDemo'
   },
   effects: {
     *getName(payload, { call, put }) {
@@ -14,14 +11,12 @@ export default {
     }
   },
   reducers: {
-    'setState'(state, { payload: { id } }) {
-      let qq = id
-      let o = {
-        ...state,
-        qq
-      };
-
-      return o
+    'setState'(state, payload) {
+        let o = {
+            state,
+            ...payload
+        }
+      return o;
     },
   },
 };

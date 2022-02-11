@@ -32,19 +32,19 @@ function App(props: any) {
             setCount(res.data.name)
         }
         props.dispatch({
-            type:'model/getName',
+            type:'uploadImg/getName',
             payload:{
                 name:'13'
             }
         })
         props.dispatch({
-            type: 'model/setState',
+            type: 'uploadImg/setState',
             payload:{
                 id:'lhc'
             }
         })
     }
-    const { qq = 'wade' } = props.model
+    const { qq = 'wade' } = props.uploadImg
      
     function changeMsg(e: any){
         setMsg(msg = e.target.value)
@@ -52,9 +52,13 @@ function App(props: any) {
     function clear():void {
         setMsg('')
     }
+    const rawHtml = {
+        __html:'<div>12345</div>'
+    }
     return (
         <div className={styles.normal}>
             {qq}
+            <p dangerouslySetInnerHTML={rawHtml}></p>
             <Button type='primary' onClick={foc}>{count}</Button>
             <Upload {...uploadProps}>
                 <Button type='primary'>Click to Upload</Button>
