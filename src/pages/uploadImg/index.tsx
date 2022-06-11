@@ -8,12 +8,14 @@ function App(props: any) {
     let [count, setCount] = useState(1)
     let [fileList, setFileList] = useState([])
     let [msg, setMsg] = useState('ahaa')
-    useEffect(function () {
+    useEffect(function (){
         axios.get('/api/getCatImgData').then(r => {
             setFileList(r.data.data)
         })
-
-    })
+        return ()=>{
+            console.log('销毁了！！')
+        }
+    },[])
     const uploadProps = {
         name: 'file',
         action: '/api/uploadImg',
@@ -83,7 +85,7 @@ function App(props: any) {
                 <h1>图片列表</h1>
                 {fileList.map((e: any, i) => {
                     return (
-                        <img width={100} src={e.url} alt={e.name}></img>
+                        <img key={e.url} width={100} src={e.url} alt={e.name}></img>
                     )
                 })}
             </div>
