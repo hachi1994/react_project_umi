@@ -20,6 +20,7 @@ const props = {
 };
 function App() {
   let [count, setCount] = useState(1)
+  haha<string>('a')
   return (
     <div className={styles.normal}>
       <Button type='primary' onClick={() => setCount(() => count++)}>{count}</Button>
