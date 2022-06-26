@@ -12,6 +12,7 @@ const config: IConfig = {
         { path: '/uploadImg', component: '../pages/uploadImg/index' },
         { path: '/testAsyncComp', component: '../pages/testAsyncComp/index' },
         { path: '/reactDemo', component: '../pages/reactDemo/index' },
+        { path: '/catinfo', component: '../pages/catInfo/index' },
       ]
     }
   ],

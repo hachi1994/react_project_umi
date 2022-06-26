@@ -8,7 +8,7 @@ import 'antd/dist/antd.css'
 import router from 'umi/router'
 import Link from 'umi/link';
 const BasicLayout: React.FC = props => {
-  const menuArr = ['Home','喵窝','React']
+  const menuArr = ['Home','喵窝','React','CatInfo']
   function changeRouter(e:any){
     console.log(e)
     if(e==='喵窝'){
@@ -17,6 +17,8 @@ const BasicLayout: React.FC = props => {
       router.push('/')
     }else if(e==='React'){
       router.push('/reactDemo')
+    }else if(e==='CatInfo'){
+      router.push('/catinfo')
     }
   }
   return (
